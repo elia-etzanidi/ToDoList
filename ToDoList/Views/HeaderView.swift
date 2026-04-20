@@ -9,6 +9,11 @@ import SwiftUI
 
 struct HeaderView: View {
     
+    let title: String
+    let subtitle: String
+    let angle: Double
+    let background: Color
+    
     // screen width helper
     private var screenWidth: CGFloat {
         let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
@@ -18,26 +23,26 @@ struct HeaderView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 0)
-                .foregroundColor(.pink)
-                .rotationEffect(Angle(degrees: 15))
+                .foregroundColor(background)
+                .rotationEffect(Angle(degrees: angle))
             
             
             VStack {
-                Text("To Do List")
+                Text(title)
                     .font(.system(size: 50, weight: .bold))
                     .foregroundColor(Color(.white))
-                Text("Get Things Done")
+                Text(subtitle)
                     .font(.system(size:30))
                     .foregroundStyle(Color(.white))
             }
-            .padding(.top, 40)
+            .padding(.top, 80)
         }
         .frame(width: screenWidth * 3,
-               height: 300)
-        .offset(y: -100)
+               height: 350)
+        .offset(y: -150)
     }
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(title: "Title", subtitle: "Subtitle", angle: 15, background: .blue)
 }
