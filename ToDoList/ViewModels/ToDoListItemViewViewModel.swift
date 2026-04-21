@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import Combine
+
+/// ViewModel for single todo item
+
+class ToDoListItemViewViewModel: ObservableObject {
+    init() {}
+}
