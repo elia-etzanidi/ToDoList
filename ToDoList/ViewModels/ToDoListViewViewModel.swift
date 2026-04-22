@@ -12,5 +12,7 @@ import Combine
 /// Primary tab
 
 class ToDoListViewViewModel: ObservableObject {
+    @Published var showingNewItemView = false
+    
     init() {}
 }
