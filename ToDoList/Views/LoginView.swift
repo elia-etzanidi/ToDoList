@@ -52,8 +52,9 @@ struct LoginView: View {
                 
                 Spacer()
             }
+            .containerRelativeFrame(.horizontal)
         }
-        }
+    }
 }
 
 #Preview {

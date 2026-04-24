@@ -40,6 +40,7 @@ struct RegisterView: View {
                 
             }
             .offset(y: -50)
+            .containerRelativeFrame(.horizontal)
             
             Spacer()
         }

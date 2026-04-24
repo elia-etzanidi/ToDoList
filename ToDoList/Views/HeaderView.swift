@@ -14,12 +14,6 @@ struct HeaderView: View {
     let angle: Double
     let background: Color
     
-    // screen width helper
-    private var screenWidth: CGFloat {
-        let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        return scene?.screen.bounds.width ?? 375
-    }
-    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 0)
@@ -37,8 +31,10 @@ struct HeaderView: View {
             }
             .padding(.top, 80)
         }
-        .frame(width: screenWidth * 3,
-               height: 350)
+        .frame(height: 350)
+        .containerRelativeFrame(.horizontal) { width, axis in
+            return width * 3
+        }
         .offset(y: -150)
     }
 }
